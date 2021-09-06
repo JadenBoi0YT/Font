@@ -3,13 +3,14 @@ noseY = 0;
 leftWrist = 0;
 rightWrist = 0;
 difference = 0;
+CurrentText = "This is your text"
 
 function setup(){
     video = createCapture(VIDEO);
-    video.size(350,300);
+    video.size(550, 500);
 
-    canvas = createCanvas(350,300);
-    canvas.position(549, 140);
+    canvas = createCanvas(550,550);
+    canvas.position(560, 250);
 
     poseNet = ml5.poseNet(video, modelLoaded);
     poseNet.on("pose", gotPoses);
@@ -29,10 +30,20 @@ function gotPoses(results){
     }
 }
 
+function UpdateText(){
+    if (document.getElementById("TextInput").value == ""){
+        console.log("No text");
+    }
+    else{
+        CurrentText = document.getElementById("TextInput").value;
+    }
+}
+
 function draw(){
-    document.getElementById("font-size").innerHTML = "font-size will be = " + difference;
+    background(0,0,0)
+    document.getElementById("font-size").innerHTML = "font-size will be = " + difference + "px";
     textSize(difference);
     
     fill(255,0,0);
-    text("This is your text", 50, 30);
+    text(CurrentText, 50, 400);
 }

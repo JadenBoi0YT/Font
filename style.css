@@ -26,3 +26,13 @@ canvas{
     border: 5px solid goldenrod;
     box-shadow: 5px 5px 5px grey;
 }
+
+#TextInput{
+    right: 0px;
+    top:30px;
+}
+
+#TextButton{
+    right: 0px;
+    bottom: 30px;
+}

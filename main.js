@@ -4,12 +4,20 @@ leftWrist = 0;
 rightWrist = 0;
 difference = 0;
 CurrentText = "This is your text"
+//let inconsolata;
+
+//function preload(){
+ //   inconsolata = loadFont('assets/inconsolata.otf');
+//}
 
 function setup(){
     video = createCapture(VIDEO);
     video.size(550, 500);
 
     canvas = createCanvas(550,550);
+    //textFont(inconsolata);
+    //textSize(width / 3);
+  //textAlign(CENTER, CENTER);
     canvas.position(560, 250);
 
     poseNet = ml5.poseNet(video, modelLoaded);
@@ -43,7 +51,9 @@ function draw(){
     background(0,0,0)
     document.getElementById("font-size").innerHTML = "font-size will be = " + difference + "px";
     textSize(difference);
-    
+    //let time = millis();
+  //rotateX(time / 1000);
+  //rotateZ(time / 1234);
     fill(255,0,0);
     text(CurrentText, 50, 400);
 }
